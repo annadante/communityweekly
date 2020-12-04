@@ -35,7 +35,3 @@
 .community-main-container:xl {
     @apply w-1/2
 }
-
-body {
-    font-family: 'Barlow Condensed', sans-serif;
-}

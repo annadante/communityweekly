@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <title>Community Finder - Discover online communities</title>
-          <meta property="og:title" content="Community Finder - Discover online communities" key="title" />
+          <meta property="og:title" content="Community Weekly - Discover online communities" key="title" />
           <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1"></meta>
           <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
           <meta name="description" content="Discover, review and join online communities. Learn how to manage, monetize and grow a community with Community Finder."></meta>
