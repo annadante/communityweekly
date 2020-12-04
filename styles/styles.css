@@ -1,0 +1,41 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.menu{
+    @apply flex items-center justify-between flex-wrap p-6
+}
+
+.menu-link {
+    @apply block mt-4 text-white mr-4
+}
+
+.menu-link:lg {
+    @apply inline-block mt-0
+}
+
+.community-main-container {
+    @apply mt-10 w-1/2 m-auto 
+}
+
+.community-main-container:sm {
+    @apply w-auto
+}
+
+.community-main-container:md {
+    @apply w-1/2
+}
+
+.community-main-container:lg {
+    @apply w-1/2
+}
+
+.community-main-container:xl {
+    @apply w-1/2
+}
+
+body {
+    font-family: 'Barlow Condensed', sans-serif;
+}
