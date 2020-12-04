@@ -21682,10 +21682,6 @@ video {
   width: 50%
 }
 
-body {
-  font-family: 'Barlow Condensed', sans-serif;
-}
-
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
