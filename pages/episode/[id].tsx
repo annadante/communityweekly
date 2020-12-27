@@ -77,7 +77,7 @@ export default class Home extends React.Component<IProps, IState> {
 
     render() {
         const { episodes } = this.props;
-        const { playing, played, duration, playbackRate } = this.state;
+        const { playing, played, duration, playbackRate, loaded } = this.state;
 
         return (
             <>
@@ -95,7 +95,7 @@ export default class Home extends React.Component<IProps, IState> {
                                 </div>
                                 <div className="space-y-2">
                                     <div className="bg-gray-300 rounded-full overflow-hidden">
-                                        <div className="bg-indigo-300 h-1.5" style={{ width: (played / duration) * 100 + '%' }} aria-valuenow={played} aria-valuemin="0" aria-valuemax={duration}></div>
+                                        <div className="bg-indigo-300 h-1.5" style={{ width: (played / duration) * 100 + '%' }} aria-valuenow={played} aria-valuemin={loaded} aria-valuemax={duration}></div>
                                         <ReactPlayer
                                             ref={this.playerRef}
                                             width="100%"
