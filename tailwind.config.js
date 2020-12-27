@@ -4,7 +4,7 @@ module.exports = {
     // purgeLayersByDefault: true,
   },
   darkMode: false, // or 'media' or 'class'
-  //purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
+  purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
     extend: {},
   },
