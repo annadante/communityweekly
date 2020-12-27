@@ -48,13 +48,6 @@ export default function Home({ records, episodes }) {
                   </a>
                 </Link>
               </li>
-              <li className="p-4">
-                <button className="rounded-lg border-gray-800 border-2 p-2 hover:bg-gray-800 hover:text-white">
-                  <Link href={record.fields.community}>
-                    Join Community
-                  </Link>
-                </button>
-              </li>
             </ul>
           </div>
         </div>))}
@@ -64,11 +57,14 @@ export default function Home({ records, episodes }) {
           <h1 className="text-2xl p-4">
             {episode.fields.episode_name}
           </h1>
-          <p className="p-4">
+          <p>
             {episode.fields.short_description}
           </p>
           <button className="bg-indigo-400 hover:bg-indigo-600 p-2">
-            <Link href="/episode/[id]">
+            <Link href={{
+                        pathname: '/episode/[id]',
+                        query: { id: episode.fields.slug },
+                    }}>
               Listen
             </Link>
           </button>
