@@ -9,9 +9,8 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <title>Community Finder - Discover online communities</title>
-          <meta property="og:title" content="Community Weekly - Discover online communities" key="title" />
+         <Head>
+          {/*<meta property="og:title" content="Community Weekly - Discover online communities" key="title" />
           <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1"></meta>
           <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
           <meta name="description" content="Discover, review and join online communities. Learn how to manage, monetize and grow a community with Community Finder."></meta>
@@ -21,9 +20,9 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://community-finder.co/"></meta>
           <meta property="og:site_name" content="Community Finder"></meta>
           <meta property="og:locale" content="en"></meta>
-          <meta name="twitter:card" content="summary_large_image"></meta>
+          <meta name="twitter:card" content="summary_large_image"></meta> */}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
         </Head>
         <body>
           <Main />

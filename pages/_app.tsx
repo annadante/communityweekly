@@ -1,7 +1,5 @@
-import '../styles/output.css';
-
-
 import * as React from 'react';
+import "../styles/global.css"
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
