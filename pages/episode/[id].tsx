@@ -4,6 +4,7 @@ import React from 'react';
 import Duration from '../../components/duration'
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 
 interface IProps {
     episodes: any[];
@@ -83,6 +84,7 @@ export default class Home extends React.Component<IProps, IState> {
             <>
                 {episodes.map((episode) => (
                     <div className="w-1/2 m-auto">
+                        <h1 className="text-4xl mt-10 mb-10">{episode.fields.episode_name}</h1>
                         <div key={episode.id} >
                             <div className="bg-gray-200 rounded sm:p-8 lg:p-4 lg:pb-6 xl:p-8 space-y-6 sm:space-y-8 lg:space-y-6 xl:space-y-8">
                                 <div className="flex items-center space-x-3.5 sm:space-x-5 lg:space-x-3.5 xl:space-x-5">
@@ -144,7 +146,6 @@ export default class Home extends React.Component<IProps, IState> {
                                 </button>
                             </div>
                         </div>
-                        <h1 className="text-4xl mt-10 mb-10">{episode.fields.episode_name}</h1>
                         <p>{episode.fields.show_notes}</p>
                         <div className="mt-5 mb-5">
                             <h1 className="mt-5 mb-5">Guest info:</h1>
@@ -187,18 +188,18 @@ export default class Home extends React.Component<IProps, IState> {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
     let headers = new Headers();
     headers.append("Authorization", "Bearer " + process.env.AIRTABLE_API);
 
     let episodes = []
 
-    let episodesResponse =
-        await fetch('https://api.airtable.com/v0/appN0b1jz6irTGYdC/Episodes ', {
-            method: 'GET',
-            headers: headers
-        });
-    let episodesInfo = await episodesResponse.json();
+    let response = 
+    await fetch(`https://api.airtable.com/v0/appN0b1jz6irTGYdC/Episodes?filterByFormula=SEARCH(\"${ctx.query.id}\",{slug})`, {
+      method: 'GET',
+      headers: headers
+    });
+    let episodesInfo = await response.json();
     episodes = episodesInfo.records;
     return {
         props:
